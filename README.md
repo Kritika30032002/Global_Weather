@@ -126,6 +126,7 @@ If you found a technical bug on Global_Weather or have ideas for features we sho
 ## Thanks to all Contributors 💪
 
 Thanks a lot for spending your time helping Global_Weather to grow. Thanks a lot! Keep rocking 🍻
+Also Give it a Star 🌟, If you loved contributing to the project.
 
   
 ## License
