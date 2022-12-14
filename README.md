@@ -54,7 +54,7 @@ npm install --force
 
 ```
 
-### Add `.env` file in the root directory
+### Create a `.env` file in the root directory
 
 - go to [weather api website](https://home.openweathermap.org/)
 - create an account
