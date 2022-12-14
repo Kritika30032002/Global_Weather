@@ -3,27 +3,28 @@ const https = require("https");
 const bodyParser = require("body-parser");
 const favicon = require("serve-favicon");
 const path = require("path");
+require('dotenv').config()
 
 const app = express();
 
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-// for parsing application/json
+// Body Parsar Middlware
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
   extended: true
 }));
 
 
-app.get("/", function (req, res) {
+app.get("/", function (req, res,) {
   res.sendFile(__dirname + "/index.html");
 });
 
 app.post("/", function (req, res) {
 
   const query = req.body.cityName
-  const apiKey = "bc640014579c1a7571af10a84b92b918"
+  const apiKey = process.env.apiKey;
   const unit = "metric"
   const url = "https://api.openweathermap.org/data/2.5/weather?q=" + query + "&appid=" + apiKey + "&units=" + unit;
   https.get(url, function (response) {
