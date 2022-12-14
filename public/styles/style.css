@@ -43,16 +43,6 @@ a {
   background-color: #fff;
   padding: 0.5rem;
   border-bottom: 1px solid #eceef3;
-  /*
-  |-----------------------------------
-  | Start navbar logo or brand etc..
-  |-----------------------------------
-  */
-  /*
-  |-----------------------------------
-  | Start navbar menu
-  |-----------------------------------
-  */
 }
 
 .input-width {
@@ -157,6 +147,7 @@ a {
 .navbar .navbar-menu .navbar-nav > li > a:hover {
   color: #66f;
 }
+
 @media (max-width: 768px) {
   .navbar .navbar-menu .navbar-nav > li > a {
     border-bottom: 1px solid #eceef3;
@@ -165,45 +156,27 @@ a {
 .navbar .navbar-menu .navbar-nav > li.active a {
   color: #66f;
 }
-.navbar .navbar-menu .navbar-nav .navbar-dropdown .dropdown {
-  list-style: none;
-  position: absolute;
-  top: 150%;
-  left: 0;
-  background-color: #fff;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  min-width: 160px;
-  width: auto;
-  white-space: nowrap;
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
-  z-index: 99999;
-  border-radius: 0.75rem;
-  display: none;
-}
+
 @media (max-width: 768px) {
-  .navbar .navbar-menu .navbar-nav .navbar-dropdown .dropdown {
+  .navbar .navbar-menu .navbar-nav {
     position: relative;
     box-shadow: none;
   }
 }
-.navbar .navbar-menu .navbar-nav .navbar-dropdown .dropdown li a {
+.navbar .navbar-menu .navbar-nav li a {
   color: #3c4250;
   padding: 0.25rem 1rem;
   display: block;
 }
-.navbar .navbar-menu .navbar-nav .navbar-dropdown .dropdown.show {
+.navbar .navbar-menu .navbar-nav .show {
   display: block !important;
 }
-.navbar .navbar-menu .navbar-nav .dropdown > .separator {
+.navbar .navbar-menu .navbar-nav > .separator {
   height: 1px;
   width: 100%;
   margin-top: 9px;
   margin-bottom: 9px;
   background-color: #eceef3;
-}
-.navbar .navbar-dropdown {
-  position: relative;
 }
 
 .navbar .navbar-header > a span {
