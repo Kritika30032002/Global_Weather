@@ -147,7 +147,6 @@ a {
 .navbar .navbar-menu .navbar-nav > li > a:hover {
   color: #66f;
 }
-
 @media (max-width: 768px) {
   .navbar .navbar-menu .navbar-nav > li > a {
     border-bottom: 1px solid #eceef3;
@@ -156,7 +155,22 @@ a {
 .navbar .navbar-menu .navbar-nav > li.active a {
   color: #66f;
 }
-
+.navbar .navbar-menu .navbar-nav .navbar-dropdown {
+  list-style: none;
+  position: absolute;
+  top: 150%;
+  left: 0;
+  background-color: #fff;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  min-width: 160px;
+  width: auto;
+  white-space: nowrap;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  z-index: 99999;
+  border-radius: 0.75rem;
+  display: none;
+}
 @media (max-width: 768px) {
   .navbar .navbar-menu .navbar-nav {
     position: relative;
