@@ -54,6 +54,13 @@ npm install --force
 
 ```
 
+### Create a `.env` file in the root directory
+
+- go to [weather api website](https://home.openweathermap.org/)
+- create an account
+- copy the weather apiKey
+- paste this line in the .env file: `apiKey = "your apiKey"`
+
 Now you're ready to run the app locally and sign into your local instance!
 
 ### Running the app locally
