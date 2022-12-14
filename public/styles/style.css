@@ -168,7 +168,7 @@ a {
   padding: 0.25rem 1rem;
   display: block;
 }
-.navbar .navbar-menu .navbar-nav .show {
+.navbar .navbar-menu .navbar-nav .dropdown.show {
   display: block !important;
 }
 .navbar .navbar-menu .navbar-nav > .separator {
