@@ -9,6 +9,8 @@ const app = express();
 
 
 app.use(express.static(path.join(__dirname, 'public')));
+app.use('/css', express.static(path.join(__dirname, 'node_modules/bootstrap/dist/css')))
+app.use('/js', express.static(path.join(__dirname, 'node_modules/bootstrap/dist/js')))
 
 // Body Parsar Middlware
 app.use(bodyParser.json());
