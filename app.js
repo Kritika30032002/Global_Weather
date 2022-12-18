@@ -5,23 +5,36 @@ const favicon = require("serve-favicon");
 const path = require("path");
 require('dotenv').config()
 
+
+/* ---------------------------- Basic Connections --------------------------- */
 const app = express();
 
 
+/* ---------------------------- Set Static Folder --------------------------- */
 app.use(express.static(path.join(__dirname, 'public')));
-app.use('/css', express.static(path.join(__dirname, 'node_modules/bootstrap/dist/css')))
-app.use('/js', express.static(path.join(__dirname, 'node_modules/bootstrap/dist/js')))
 
-// Body Parsar Middlware
+
+/* ---------------------------- Setting up CSS/JS Files --------------------------- */
+app.use('/css', express.static(path.join(__dirname, 'node_modules/bootstrap/dist/css')));
+app.use('/js', express.static(path.join(__dirname, 'node_modules/bootstrap/dist/js')));
+
+
+/* ---------------------------- Body Parser Setup --------------------------- */
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
   extended: true
 }));
 
 
+/* ---------------------------- Basic Routes --------------------------- */
 app.get("/", function (req, res,) {
   res.sendFile(__dirname + "/index.html");
 });
+
+app.get("/search", function (req, res,) {
+  res.sendFile(__dirname + "/search.html");
+});
+
 
 app.post("/", function (req, res) {
 
@@ -54,6 +67,7 @@ app.post("/", function (req, res) {
 
 
 
+/* ---------------------------- Server Listening --------------------------- */
 app.listen(3000, function () {
   console.log("Server is running on port 3000.");
 })
