@@ -31,8 +31,8 @@ app.get("/", function (req, res,) {
   res.sendFile(__dirname + "/index.html");
 });
 
-app.get("/search", function (req, res,) {
-  res.sendFile(__dirname + "/search.html");
+app.get("/about", function (req, res,) {
+  res.sendFile(__dirname + "/about.html");
 });
 
 
