@@ -257,7 +257,7 @@ a {
 /* ------------------------------- SEARCH FORM ------------------------------ */
 .search_form {
   position: relative;
-  max-width:76vw;
+  max-width: 76vw;
 }
 
 /* ------------------------------- SEARCH ICON ------------------------------ */
@@ -278,55 +278,56 @@ a {
   display: block;
   margin: auto;
   text-align: center;
-  padding-block:0.5em;
+  padding-block: 0.5em;
 }
 
 
 /* --------------------------- CURRENT SEARCH INFO --------------------------- */
 .current_search_info {
   color: #fff;
-  padding-block-start:5em;
+  padding-block-start: 5em;
   line-height: 24px;
-  padding-inline:1em;
+  padding-inline: 1em;
   letter-spacing: 2px;
-  max-width:76vw;
+  max-width: 76vw;
   margin: auto;
 }
 
 
-.current_time > p:nth-child(1){
+.current_time>p:nth-child(1) {
   position: relative;
-  font-size:64px;
+  font-size: 64px;
 }
 
-.current_time > p:nth-child(1) > span{
-  font-size:32px;
+.current_time>p:nth-child(1)>span {
+  font-size: 32px;
   position: absolute;
   bottom: -10px;
-  left:4.2em;
+  left: 4.2em;
 }
 
-.current_city{
-  margin-block:4em;
-  display:flex;
+.current_city {
+  margin-block: 4em;
+  display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.current_city > p:nth-child(1){
-  font-size:40px;
+.current_city>p:nth-child(1) {
+  font-size: 40px;
 }
 
-.current_city > p:nth-child(3){
-  font-size:20px;
+.current_city>p:nth-child(3) {
+  font-size: 20px;
 }
-.current_city > p:nth-child(2){
+
+.current_city>p:nth-child(2) {
   width: 20%;
   height: 2px;
   background-color: #fff;
 }
 
-.current_city_weather_condition{
+.current_city_weather_condition {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -336,16 +337,16 @@ a {
   margin: auto;
 }
 
-.current_city_weather_condition > ul{
+.current_city_weather_condition>ul {
   list-style-type: none;
   text-align: center;
 }
 
-.current_city_weather_condition > ul > li:nth-child(1){
+.current_city_weather_condition>ul>li:nth-child(1) {
   font-size: 70px;
 }
 
-.current_city_weather_condition > ul > li:nth-child(2){
+.current_city_weather_condition>ul>li:nth-child(2) {
   font-size: 30px;
 }
 
@@ -354,6 +355,95 @@ a {
 /* --------------------------- RESULT WEATHER INFO -------------------------- */
 .result_weather_info {
   background-color: #fff;
-  max-width:76vw;
+  max-width: 76vw;
+  padding-block: 2em;
+  margin: auto;
+  width: 100%;
 }
 
+.result_weather_info>div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.current_weather_condition {
+  text-align: center;
+}
+
+
+.current_weather_condition i {
+  font-size: 4.6em;
+  color: #1C315E;
+  padding-block-end: 0.2em;
+}
+
+.current_weather_condition p {
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.current_temprature {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.temp {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 30px;
+  width: 100%;
+}
+
+.temparature>p {
+  position: relative;
+  font-size: 50px;
+}
+
+.temp span:nth-child(1) {
+  /* color:red; */
+  position: absolute;
+  top: 4px;
+  right: -18px;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.temp span:nth-child(2) {
+  position: absolute;
+  top: 30px;
+  right: -18px;
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.temparature p:nth-child(2){
+  width: 4%;
+  height: 2px;
+  background-color: #1C315E;
+}
+
+.temparature span{
+  font-size:50px;
+}
+
+.temprature_feels_like p:nth-child(1){
+  position: relative;
+  font-size: 50px;
+}
+/*  */
+
+.temprature_feels_like p:nth-child(3){
+font-size:20px;
+}
+
+.temprature_feels_like p:nth-child(2){
+  width: 4%;
+  height: 2px;
+  background-color: #1C315E;
+}
