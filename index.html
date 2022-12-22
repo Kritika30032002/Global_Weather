@@ -39,9 +39,48 @@
   </nav>
 
   <!-- RESULT-BOX -->
-  <div class="container result_box" style="width:100vw;height:76vh;">
-    
+  <div class="result_main_div">
+    <div class="result_box">
+      <div class="search_box pt-3 d-flex flex-row justify-content-center align-content-center">
+        <form class="form-group w-100 search_form" action="/" method="post">
+          <div>
+            <input class="form-control input-width" id="cityInput" type="text" name="cityName"
+              placeholder="Search New City" />
+            <i class="fa-solid fa-magnifying-glass search_icon"></i>
+          </div>
+        </form>
+      </div>
+      <div class="current_search_info">
+        <div class="current_time">
+          <p>
+            7:43 <span>PM</span>
+          </p>
+          <p>
+            WEDNESDAY, 14 DECEMBER 2022
+          </p>
+        </div>
+        <div class="current_city">
+          <p>DELHI</p>
+          <p></p>
+          <p>INDIA</p>
+        </div>
+      </div>
+      <div class="current_city_weather_condition">
+        <ul>
+          <li>
+            <i class="fa-solid fa-smog"></i>
+          </li>
+          <li>
+            HAZE
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="result_weather_info">
+    </div>
+
   </div>
+
 
   <!-- FOOTER -->
   <div class="bg-light text-center" style="padding: 1em 0 1em 0;">

@@ -6,7 +6,7 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  /* outline:2px solid red; */
+  /* outline: 2px solid red; */
 }
 
 body {
@@ -51,13 +51,6 @@ a {
   border-bottom: 1px solid #eceef3;
 }
 
-.input-width {
-  width: 40%;
-}
-
-.button {
-  background: #66f !important;
-}
 
 @media (min-width: 576px) {
   .navbar .container {
@@ -223,7 +216,8 @@ a {
 }
 
 .navbar .navbar-header>a span {
-  color: #66f;
+  color: #1C315E;
+  font-weight: 600;
 }
 
 .navbar .navbar-header h4 {
@@ -238,10 +232,128 @@ a {
 }
 
 
+
+
+/* ----------------------------- RESULT MAIN DIV ---------------------------- */
+.result_main_div {
+  width: 100%;
+  height: 100%;
+}
+
 /* ---------------------------- RESULT BOX STYLE ---------------------------- */
-.result_box{
-  background: linear-gradient(rgba(28, 49, 94, 0.6), rgba(28, 49, 94, 0.6)), url('../assets/cloud1.jpg');
+.result_box {
+  background: linear-gradient(rgba(28, 49, 94, 0.8), rgba(28, 49, 94, 0.8)), url('../assets/cloud2.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  width: 100vw;
+  height: 80vh;
+  padding-inline: 5vw;
 }
+
+/* ----------------------------- SEARCH BOX FORM ---------------------------- */
+.search_box {}
+
+/* ------------------------------- SEARCH FORM ------------------------------ */
+.search_form {
+  position: relative;
+  max-width:76vw;
+}
+
+/* ------------------------------- SEARCH ICON ------------------------------ */
+.search_icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 1.4em;
+  font-size: 24px;
+}
+
+/* ----------------------------- SEARCH INPUT ---------------------------- */
+.input-width {
+  width: 100%;
+  /* height: 50px; */
+  padding-inline: 3em;
+  font-size: large;
+  display: block;
+  margin: auto;
+  text-align: center;
+  padding-block:0.5em;
+}
+
+
+/* --------------------------- CURRENT SEARCH INFO --------------------------- */
+.current_search_info {
+  color: #fff;
+  padding-block-start:5em;
+  line-height: 24px;
+  padding-inline:1em;
+  letter-spacing: 2px;
+  max-width:76vw;
+  margin: auto;
+}
+
+
+.current_time > p:nth-child(1){
+  position: relative;
+  font-size:64px;
+}
+
+.current_time > p:nth-child(1) > span{
+  font-size:32px;
+  position: absolute;
+  bottom: -10px;
+  left:4.2em;
+}
+
+.current_city{
+  margin-block:4em;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.current_city > p:nth-child(1){
+  font-size:40px;
+}
+
+.current_city > p:nth-child(3){
+  font-size:20px;
+}
+.current_city > p:nth-child(2){
+  width: 20%;
+  height: 2px;
+  background-color: #fff;
+}
+
+.current_city_weather_condition{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  gap: 10px;
+  margin: auto;
+}
+
+.current_city_weather_condition > ul{
+  list-style-type: none;
+  text-align: center;
+}
+
+.current_city_weather_condition > ul > li:nth-child(1){
+  font-size: 70px;
+}
+
+.current_city_weather_condition > ul > li:nth-child(2){
+  font-size: 30px;
+}
+
+
+
+/* --------------------------- RESULT WEATHER INFO -------------------------- */
+.result_weather_info {
+  background-color: #fff;
+  max-width:76vw;
+}
+
