@@ -14,51 +14,139 @@
 </head>
 
 <body>
+  <!-- ------------------------------- NAVBAR -------------------------------- -->
   <nav class="navbar">
     <div class="container">
       <div class="navbar-header">
-        <button class="navbar-toggler" data-toggle="open-navbar1">
+        <button class="navbar-toggler" data-toggle="open-navbar1" title="menu">
           <span></span>
           <span></span>
           <span></span>
         </button>
-        <a href="#">
-          <h4 class="m-0">Global<span>Weather</span></h4>
+        <a href="/">
+          <h4 class="m-0 weather_logo">Global<span>Weather</span></h4>
         </a>
       </div>
-
       <div class="navbar-menu" id="open-navbar1">
         <ul class="navbar-nav">
-          <li class="active"><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
+          <li class="active"><a href="/">Home</a></li>
+          <li><a href="/about">About</a></li>
         </ul>
       </div>
     </div>
   </nav>
-  <div class="container mt-3">
-    <form class="form-group" action="/" method="post">
-      <label class="h5" for="cityInput">City Name: </label>
-      <input class="form-control mt-1.5 h-25 input-width" id="cityInput" type="text" name="cityName" />
-      <button class="btn button mt-2" type="submit">Go</button>
-    </form>
+
+  <!-- ----------------------------- RESULT-BOX ------------------------------ -->
+  <div class="result_main_div">
+    <div class="result_box">
+      <div class="search_box pt-3 d-flex flex-row justify-content-center align-content-center">
+        <form class="form-group w-100 search_form" action="/" method="post">
+          <div>
+            <input class="form-control input-width" id="cityInput" type="text" name="cityName"
+              placeholder="Search New City" />
+            <i class="fa-solid fa-magnifying-glass search_icon"></i>
+          </div>
+        </form>
+      </div>
+      <div class="current_search_info">
+        <div class="current_time">
+          <p>
+            7:43 <span>PM</span>
+          </p>
+          <p>
+            WEDNESDAY, 14 DECEMBER 2022
+          </p>
+        </div>
+        <div class="current_city">
+          <p>DELHI</p>
+          <p></p>
+          <p>INDIA</p>
+        </div>
+      </div>
+      <div class="current_city_weather_condition">
+        <ul>
+          <li>
+            <i class="fa-solid fa-smog"></i>
+          </li>
+          <li>
+            HAZE
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="result_weather_info">
+      <div id="weather">
+        <div class="current_weather_condition">
+          <span><i class="fa-solid fa-cloud"></i></span>
+          <p>CLOUDY</p>
+        </div>
+        <div class="current_temperature">
+          <div class="temperature temp">
+            <p>17 <span>o</span> <span>c</span></p>
+            <p></p>
+            <span><i class="fa-solid fa-temperature-three-quarters"></i></span>
+          </div>
+          <div class="temperature_feels_like temp">
+            <p>5 <span>o</span><span>c</span></p>
+            <p></p>
+            <p>Feels Like</p>
+          </div>
+        </div>
+      </div>
+      <div class="weather_situation_info" id="weather_situation_info">
+        <ul class="weather_situation">
+          <li><iconify-icon icon="mdi:car-brake-low-pressure"></iconify-icon></li>
+          <li>HUMIDITY <span>(%)</span></li>
+          <li></li>
+          <li>23.5</li>
+        </ul>
+        <ul class="weather_situation">
+          <li><iconify-icon icon="carbon:humidity"></iconify-icon></li>
+          <li>AIR PRESSURE <span>(HPA)</span></li>
+          <li></li>
+          <li>1015</li>
+        </ul>
+        <ul class="weather_situation">
+          <li><iconify-icon icon="bi:wind"></iconify-icon></li>
+          <li>WIND <span>(km/h)</span></li>
+          <li></li>
+          <li>8</li>
+        </ul>
+      </div>
+    </div>
   </div>
 
-  <div class="bg-light text-center" style="padding: 1em 0 1em 0; margin-top: 35%;">
+  <!-- ------------------------------- FOOTER -------------------------------- -->
+  <div class="bg-light text-center">
+    <p class="">&copy; Copyright 2022 Made by <a href="https://github.com/Kritika30032002" class=""> Kritika Gupta </a>
+    </p>
 
-    <h6 class="card-title" style="color: black;">&copy; Copyright 2022</h6>
-    <p class="card-text" style="color: black;">Made by <a href="https://github.com/Kritika30032002"
-        style="text-decoration: none;color: #66f;"> Kritika Gupta </a></p>
-    <a href="https://www.linkedin.com/in/kritika-gupta-343458212" class="btn my-2 my-sm-0" type="submit"
+    <a href="https://www.linkedin.com/in/kritika-gupta-343458212" class="btn" type="submit"
       style=" border: none; margin-right: 1em;">
-      <img src="https://img.icons8.com/fluency/48/000000/linkedin.png" height="50px" width="50px" />
+      <img src="https://img.icons8.com/fluency/48/000000/linkedin.png" height="30px" width="30px"
+        alt="linkedin_image" />
     </a>
-    <a href="https://github.com/Kritika30032002" class="btn my-2 my-sm-0" type="submit"
-      style="border: none;margin-right: 1em;"> <img src="https://img.icons8.com/fluency/48/000000/github.png"
-        height="50px" width="50px" />
+    <a href="https://github.com/Kritika30032002" class="btn" type="submit" style="border: none;margin-right: 1em;"> <img
+        src="https://img.icons8.com/fluency/48/000000/github.png" alt="github_image" height="30px" width="30px" />
     </a>
   </div>
 
 </body>
 <script src="/scripts/script.js"></script>
+<script src="https://kit.fontawesome.com/54bad8fe75.js" crossorigin="anonymous"></script>
+<script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
+</head>
 
 </html>
+
+<!-- #1C315E -->
+
+
+<!-- <div class="border border-danger" style="width: 100%; height:60%">
+      <form class="form-group" action="/" method="post">
+        <label class="h5" for="cityInput">City Name: </label>
+        <i class="bi bi-1-square"></i>
+        <input class="form-control mt-1.5 h-25 input-width" id="cityInput" type="text" name="cityName" />
+        <button class="btn button mt-2" type="submit">Go</button>
+      </form>
+    </div>-->

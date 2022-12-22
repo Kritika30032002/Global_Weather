@@ -5,26 +5,38 @@ const favicon = require("serve-favicon");
 const path = require("path");
 require('dotenv').config()
 
+
+/* ---------------------------- Basic Connections --------------------------- */
 const app = express();
 
 
+/* ---------------------------- Set Static Folder --------------------------- */
 app.use(express.static(path.join(__dirname, 'public')));
-app.use('/css', express.static(path.join(__dirname, 'node_modules/bootstrap/dist/css')))
-app.use('/js', express.static(path.join(__dirname, 'node_modules/bootstrap/dist/js')))
 
-// Body Parsar Middlware
+
+/* ---------------------------- Setting up CSS/JS Files --------------------------- */
+app.use('/css', express.static(path.join(__dirname, 'node_modules/bootstrap/dist/css')));
+app.use('/js', express.static(path.join(__dirname, 'node_modules/bootstrap/dist/js')));
+
+
+/* ---------------------------- Body Parser Setup --------------------------- */
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
   extended: true
 }));
 
 
+/* ---------------------------- Basic Routes --------------------------- */
 app.get("/", function (req, res,) {
   res.sendFile(__dirname + "/index.html");
 });
 
-app.post("/", function (req, res) {
+app.get("/about", function (req, res,) {
+  res.sendFile(__dirname + "/about.html");
+});
 
+
+app.post("/", function (req, res) {
   const query = req.body.cityName
   const apiKey = process.env.apiKey;
   const unit = "metric"
@@ -42,6 +54,8 @@ app.post("/", function (req, res) {
       const icon = weatherData.weather[0].icon;
       const imageURL = "https://openweathermap.org/img/wn/" + icon + "@2x.png"
 
+
+
       res.write("<p>The weather is currently " + weatherDescription + " </p>");
       res.write("<h1>The temperature in " + query + " is " + temp + " degrees Celcius.</h1>");
       res.write("<img src=" + imageURL + ">");
@@ -54,6 +68,7 @@ app.post("/", function (req, res) {
 
 
 
+/* ---------------------------- Server Listening --------------------------- */
 app.listen(3000, function () {
   console.log("Server is running on port 3000.");
 })
