@@ -1,9 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap");
 
+
+
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  /* outline:2px solid red; */
 }
 
 body {
@@ -232,4 +235,13 @@ a {
   .navbar .navbar-header h4 {
     font-size: 1.05rem;
   }
+}
+
+
+/* ---------------------------- RESULT BOX STYLE ---------------------------- */
+.result_box{
+  background: linear-gradient(rgba(28, 49, 94, 0.6), rgba(28, 49, 94, 0.6)), url('../assets/cloud1.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
