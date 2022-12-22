@@ -18,6 +18,12 @@ a {
   text-decoration: none;
   letter-spacing: 1px;
   font-size: 1em;
+  font-size: 1em;
+  font-size: 1em;
+  font-size: 1em;
+  font-size: 1em;
+  font-size: 1em;
+  font-size: 1em;
 }
 
 .navbar .container .navbar-header a h4 {
@@ -257,11 +263,11 @@ a {
   width: 100vw;
   height: 80vh;
   padding-inline: 5vw;
-  padding-block:1em;
+  padding-block: 1em;
 }
 
 /* ----------------------------- SEARCH BOX FORM ---------------------------- */
-.search_box {}
+/* .search_box {} */
 
 /* ------------------------------- SEARCH FORM ------------------------------ */
 .search_form {
@@ -368,7 +374,7 @@ a {
   padding-block: 2em;
   margin: auto;
   width: 100%;
-  padding-inline:1em;
+  padding-inline: 1em;
 }
 
 .result_weather_info>div {
@@ -465,13 +471,13 @@ a {
 
 .weather_situation_info {
   width: 100%;
-  gap: 2em;
+  gap: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.weather_situation_info div {
-  display: flex;
-  justify-content: center;
-}
 
 .weather_situation {
   display: flex;
@@ -519,113 +525,60 @@ a {
 /*                    RESPONSIVE DESIGN USING @MEDIA QUERY                    */
 /* -------------------------------------------------------------------------- */
 
-@media (min-width: 576px) {
-  .navbar .container {
-    max-width: 540px;
-  }
-}
+@media (min-width: 576px) {}
+
+@media (min-width: 768px) {}
 
 @media (min-width: 768px) {
+  #weather_situation_info {
+    flex-direction: row;
+    justify-content: space-between;
+  }
 
+  .current_search_info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .current_city {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    gap: 0;
+    line-height: 14px;
+
+  }
+
+  .current_city p:nth-child(2) {
+    display: none;
+  }
+
+  .current_city p:nth-child(3) {
+    margin-block: 0;
+  }
+
+  .search_form {
+    max-width: 50vw;
+  }
+
+  .weather_situation li:nth-child(1) {
+    font-size: 3em;
+  }
+
+  .weather_situation li:nth-child(2) {
+    font-size: 0.8em;
+  }
 }
 
 @media (min-width: 1024px) {
   body {
-    background-color: gray;
-  }
-
-  #weather_situation_info {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .current_search_info{
-    display:flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .current_city{
-    display: flex;
-    flex-direction:column;
-    justify-content: flex-end;
-    align-items: flex-end;
-    gap:0;
-    line-height:14px;
-
-  }
-  .current_city p:nth-child(2){
-    display: none;
-  }
-  .current_city p:nth-child(3){
-    margin-block:0;
-  }
-  .search_form{
-    max-width:50vw;
+    background-color: blue;
   }
 }
 
-@media (min-width: 768px) {
-  .navbar .container {
-    max-width: 720px;
-  }
-}
+@media (min-width: 992px) {}
 
-@media (min-width: 992px) {
-  .navbar .container {
-    max-width: 960px;
-  }
-}
-
-@media (min-width: 1200px) {
-  .navbar .container {
-    max-width: 1140px;
-  }
-}
-
-
-@media (max-width: 768px) {
-
-  .navbar,
-  .navbar>.container {
-    display: block;
-  }
-
-  .navbar .navbar-menu .navbar-nav {
-    width: 100%;
-    display: block;
-    border-top: 1px solid #eee;
-    margin-top: 1rem;
-  }
-
-  .navbar .navbar-menu .navbar-nav>li>a {
-    border-bottom: 1px solid #eceef3;
-  }
-
-  .navbar .navbar-menu .navbar-nav {
-    position: relative;
-    box-shadow: none;
-  }
-
-  .navbar .navbar-header h4 {
-    font-size: 1.05rem;
-  }
-
-  .navbar .navbar-menu {
-    display: none;
-    text-align: center;
-  }
-
-  .navbar .navbar-header .navbar-toggler {
-    display: block;
-  }
-
-  .navbar .navbar-header {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-direction: row-reverse;
-  }
-}
+@media (min-width: 1200px) {}
