@@ -273,7 +273,11 @@ a {
 }
 
 /* ----------------------------- SEARCH BOX FORM ---------------------------- */
-/* .search_box {} */
+.search_box {
+  width: 100%;
+  max-width: 28em;
+  margin: auto;
+}
 
 /* ------------------------------- SEARCH FORM ------------------------------ */
 .search_form {
@@ -293,7 +297,7 @@ a {
 /* ----------------------------- SEARCH INPUT ---------------------------- */
 .input-width {
   width: 100%;
-  /* height: 50px; */
+  height: 40px;
   padding-inline: 3em;
   font-size: large;
   display: block;
