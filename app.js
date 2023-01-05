@@ -41,7 +41,7 @@ app.get("/about", function (req, res,) {
   res.render('about');
 });
 
-app.get("*", function (req,res){
+app.get("*", function (req, res) {
   res.render('error');
 });
 
@@ -54,19 +54,27 @@ app.post("/", function (req, res) {
   https.get(url, function (response) {
     console.log(response.statusCode);
 
-    response.on("data", function (data) {
-      const weatherData = JSON.parse(data)
+    if (response.statusCode === 200) {
+      response.on("data", function (data) {
+        const weatherData = JSON.parse(data)
 
-      const temp = weatherData.main.temp;
-      const weatherDescription = weatherData.weather[0].description;
-      const icon = weatherData.weather[0].icon;
-      const imageURL = "https://openweathermap.org/img/wn/" + icon + "@2x.png"
-      res.write("<p>The weather is currently " + weatherDescription + " </p>");
-      res.write("<h1>The temperature in " + query + " is " + temp + " degrees Celcius.</h1>");
-      res.write("<img src=" + imageURL + ">");
+        const temp = weatherData.main.temp;
+        const weatherDescription = weatherData.weather[0].description;
+        const icon = weatherData.weather[0].icon;
+        const imageURL = "https://openweathermap.org/img/wn/" + icon + "@2x.png"
+        res.write("<p>The weather is currently " + weatherDescription + " </p>");
+        res.write("<h1>The temperature in " + query + " is " + temp + " degrees Celcius.</h1>");
+        res.write("<img src=" + imageURL + ">");
 
-      res.send()
-    })
+        res.send()
+      })
+
+
+    } else {
+      console.log("Error");
+      res.render('error')
+    }
+
   })
 });
 
@@ -77,3 +85,19 @@ app.post("/", function (req, res) {
 app.listen(3000, function () {
   console.log("Server is running on port 3000.");
 })
+
+
+
+// response.on("data", function (data) {
+//   const weatherData = JSON.parse(data)
+
+//   const temp = weatherData.main.temp;
+//   const weatherDescription = weatherData.weather[0].description;
+//   const icon = weatherData.weather[0].icon;
+//   const imageURL = "https://openweathermap.org/img/wn/" + icon + "@2x.png"
+//   res.write("<p>The weather is currently " + weatherDescription + " </p>");
+//   res.write("<h1>The temperature in " + query + " is " + temp + " degrees Celcius.</h1>");
+//   res.write("<img src=" + imageURL + ">");
+
+//   res.send()
+// })
