@@ -9,9 +9,15 @@ require('dotenv').config()
 /* ---------------------------- Basic Connections --------------------------- */
 const app = express();
 
+/* ----------------------------- Set View Engine ---------------------------- */
+app.set('view engine', 'pug');
+
+/* ---------------------------- Set Views Folder ---------------------------- */
+app.set('views', path.join(__dirname, 'src', 'views'));
 
 /* ---------------------------- Set Static Folder --------------------------- */
 app.use(express.static(path.join(__dirname, 'public')));
+
 
 
 /* ---------------------------- Setting up CSS/JS Files --------------------------- */
@@ -28,11 +34,15 @@ app.use(bodyParser.urlencoded({
 
 /* ---------------------------- Basic Routes --------------------------- */
 app.get("/", function (req, res,) {
-  res.sendFile(__dirname + "/index.html");
+  res.render('index');
 });
 
 app.get("/about", function (req, res,) {
-  res.sendFile(__dirname + "/about.html");
+  res.render('about');
+});
+
+app.get("*", function (req, res) {
+  res.render('error');
 });
 
 
@@ -42,26 +52,29 @@ app.post("/", function (req, res) {
   const unit = "metric"
   const url = "https://api.openweathermap.org/data/2.5/weather?q=" + query + "&appid=" + apiKey + "&units=" + unit;
   https.get(url, function (response) {
-    // console.log(response);
     console.log(response.statusCode);
 
-    response.on("data", function (data) {
-      const weatherData = JSON.parse(data)
-      // console.log(weatherData);
+    if (response.statusCode === 200) {
+      response.on("data", function (data) {
+        const weatherData = JSON.parse(data)
 
-      const temp = weatherData.main.temp;
-      const weatherDescription = weatherData.weather[0].description;
-      const icon = weatherData.weather[0].icon;
-      const imageURL = "https://openweathermap.org/img/wn/" + icon + "@2x.png"
+        const temp = weatherData.main.temp;
+        const weatherDescription = weatherData.weather[0].description;
+        const icon = weatherData.weather[0].icon;
+        const imageURL = "https://openweathermap.org/img/wn/" + icon + "@2x.png"
+        res.write("<p>The weather is currently " + weatherDescription + " </p>");
+        res.write("<h1>The temperature in " + query + " is " + temp + " degrees Celcius.</h1>");
+        res.write("<img src=" + imageURL + ">");
+
+        res.send()
+      })
 
 
+    } else {
+      console.log("Error");
+      res.render('error')
+    }
 
-      res.write("<p>The weather is currently " + weatherDescription + " </p>");
-      res.write("<h1>The temperature in " + query + " is " + temp + " degrees Celcius.</h1>");
-      res.write("<img src=" + imageURL + ">");
-
-      res.send()
-    })
   })
 });
 
@@ -72,3 +85,19 @@ app.post("/", function (req, res) {
 app.listen(3000, function () {
   console.log("Server is running on port 3000.");
 })
+
+
+
+// response.on("data", function (data) {
+//   const weatherData = JSON.parse(data)
+
+//   const temp = weatherData.main.temp;
+//   const weatherDescription = weatherData.weather[0].description;
+//   const icon = weatherData.weather[0].icon;
+//   const imageURL = "https://openweathermap.org/img/wn/" + icon + "@2x.png"
+//   res.write("<p>The weather is currently " + weatherDescription + " </p>");
+//   res.write("<h1>The temperature in " + query + " is " + temp + " degrees Celcius.</h1>");
+//   res.write("<img src=" + imageURL + ">");
+
+//   res.send()
+// })
