@@ -41,6 +41,10 @@ app.get("/about", function (req, res,) {
   res.render('about');
 });
 
+app.get("*", function (req,res){
+  res.render('error');
+});
+
 
 app.post("/", function (req, res) {
   const query = req.body.cityName
