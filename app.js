@@ -5,7 +5,9 @@ const favicon = require("serve-favicon");
 const path = require("path");
 require('dotenv').config()
 const timeObject = require('./public/scripts/time');
+const { timeEnd } = require("console");
 
+console.log(timeObject);
 
 /* ---------------------------- Basic Connections --------------------------- */
 const app = express();
@@ -35,7 +37,7 @@ app.use(bodyParser.urlencoded({
 
 /* ---------------------------- Basic Routes --------------------------- */
 app.get("/", function (req, res,) {
-  res.render('index', { title: "Global_Weather | Home", time: timeObject.time, dayMethod: timeObject.dayMethod, day: timeObject.day, today: timeObject.today });
+  res.render('index', { title: "Global_Weather | Home", time: timeObject.time, day:timeEnd.day, dayMethod:timeObject.dayMethod, today:timeObject.today });
 });
 
 app.get("/about", function (req, res,) {
@@ -73,7 +75,7 @@ app.post("/", function (req, res) {
           country: weatherData.sys.country,
         }
 
-        res.render('index', { title: "Global_Weather | Result", temp: weatherDescription.temp, feels_like: weatherDescription.feels_like, humidity: weatherDescription.humidity, pressure: weatherDescription.pressure, wind: weatherDescription.wind, weatherDesc: weatherDescription.weatherDesc, weatherMain: weatherDescription.weatherMain, icon: weatherDescription.icon, imageURL: weatherDescription.imageURL, name: weatherDescription.name, country: weatherDescription.country })
+        res.render('index', { title: "Global_Weather | Result", temp: weatherDescription.temp, feels_like: weatherDescription.feels_like, humidity: weatherDescription.humidity, pressure: weatherDescription.pressure, wind: weatherDescription.wind, weatherDesc: weatherDescription.weatherDesc, weatherMain: weatherDescription.weatherMain, icon: weatherDescription.icon, imageURL: weatherDescription.imageURL, name: weatherDescription.name, country: weatherDescription.country,  time: timeObject.time, day:timeEnd.day, dayMethod:timeObject.dayMethod, today:timeObject.today  })
       })
 
 

@@ -320,15 +320,16 @@ a {
 
 
 .current_time>p:nth-child(1) {
-  position: relative;
+  /* position: relative; */
   font-size: 64px;
+  width: auto;
 }
 
 .current_time>p:nth-child(1)>span {
   font-size: 32px;
-  position: absolute;
+  /* position: absolute;
   bottom: -10px;
-  left: 4.2em;
+  left: 4.2em; */
 }
 
 .current_city {
