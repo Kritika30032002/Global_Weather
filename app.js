@@ -34,15 +34,15 @@ app.use(bodyParser.urlencoded({
 
 /* ---------------------------- Basic Routes --------------------------- */
 app.get("/", function (req, res,) {
-  res.render('index', { title:"Global_Weather | Home" });
+  res.render('index', { title: "Global_Weather | Home" });
 });
 
 app.get("/about", function (req, res,) {
-  res.render('index', { title:"Global_Weather | About" });
+  res.render('index', { title: "Global_Weather | About" });
 });
 
 app.get("*", function (req, res) {
-  res.render('index', { title:"Global_Weather | Error" });
+  res.render('index', { title: "Global_Weather | Error" });
 });
 
 
@@ -58,13 +58,21 @@ app.post("/", function (req, res) {
       response.on("data", function (data) {
         const weatherData = JSON.parse(data)
 
-        const temp = weatherData.main.temp;
-        const weatherDescription = weatherData.weather[0].description;
-        const icon = weatherData.weather[0].icon;
-        const imageURL = "https://openweathermap.org/img/wn/" + icon + "@2x.png"
-        
+        const weatherDescription = {
+          temp: weatherData.main.temp,
+          feels_like: weatherData.main.feels_like,
+          humidity: weatherData.main.humidity,
+          pressure: weatherData.main.pressure,
+          wind: weatherData.wind.speed,
+          weatherDesc: weatherData.weather[0].description.toUpperCase(),
+          weatherMain: weatherData.weather[0].main.toUpperCase(),
+          icon: weatherData.weather[0].icon,
+          imageURL: "https://openweathermap.org/img/wn/" + weatherData.weather[0].icon + "@2x.png",
+          name: weatherData.name.toUpperCase(),
+          country: weatherData.sys.country,
+        }
 
-        res.render('index', { title:"Global_Weather | Result" })
+        res.render('index', { title: "Global_Weather | Result", temp: weatherDescription.temp, feels_like: weatherDescription.feels_like, humidity: weatherDescription.humidity, pressure: weatherDescription.pressure, wind: weatherDescription.wind, weatherDesc: weatherDescription.weatherDesc, weatherMain: weatherDescription.weatherMain, icon: weatherDescription.icon, imageURL: weatherDescription.imageURL, name: weatherDescription.name, country: weatherDescription.country })
       })
 
 
