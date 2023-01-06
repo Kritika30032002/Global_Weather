@@ -14,21 +14,21 @@ body {
   font-size: 0.925rem;
 }
 
-a {
+.navbar .container .navbar-header a {
   text-decoration: none;
   letter-spacing: 1px;
-  font-size: 1em;
-  font-size: 1em;
-  font-size: 1em;
-  font-size: 1em;
-  font-size: 1em;
-  font-size: 1em;
   font-size: 1em;
 }
 
 .navbar .container .navbar-header a h4 {
   color: rgb(75 85 99);
-  font-size: 1.3em;
+  font-size: 1.6em;
+  font-weight:600;
+}
+
+.navbar .container .navbar-header a h4 span{
+  color:#1C315E;
+  font-weight:600;
 }
 
 .container {
@@ -320,15 +320,16 @@ a {
 
 
 .current_time>p:nth-child(1) {
-  position: relative;
+  /* position: relative; */
   font-size: 64px;
+  width: auto;
 }
 
 .current_time>p:nth-child(1)>span {
   font-size: 32px;
-  position: absolute;
+  /* position: absolute;
   bottom: -10px;
-  left: 4.2em;
+  left: 4.2em; */
 }
 
 .current_city {

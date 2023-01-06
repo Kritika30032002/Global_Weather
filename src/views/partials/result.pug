@@ -8,31 +8,31 @@ div(class="result_main_div")
 
         div(class="current_search_info")
             div(class="current_time")
-                p  7:43 <span>PM</span>
-                p  WEDNESDAY, 14 DECEMBER 2022
+                p  #{time || "7:43"} <span>#{dayMethod||"PM"}</span>
+                p  #{day || "WEDNESDAY"}, #{today || "14 DECEMBER 2022"}
             div(class="current_city")
-                p DELHI
+                p #{name || "DELHI"}
                 p
-                p INDIA
+                p #{country || "INDIA"}
 
         div(class="current_city_weather_condition")
             ul 
                 li 
                     i(class="fa-solid fa-smog")
-                li HAZE
+                li #{weatherDesc || "HAZE"}
     div(class="result_weather_info")
         div(id="weather")
             div(class="current_weather_condition")
                 span 
                     i(class="fa-solid fa-cloud")
-                p CLOUDY
+                p #{weatherMain || "CLOUDY"}
             div(class="current_temperature")
                 div(class="temperature temp")
-                    p 17 <span>o</span> <span>c</span>
+                    p #{temp || "17"} <span>o</span> <span>c</span>
                     span
                         i(class="fa-solid fa-temperature-three-quarters")       
                 div(class="temperature_feels_like temp")
-                    p 5 <span>o</span><span>c</span>
+                    p #{feels_like || "5"} <span>o</span><span>c</span>
                     p
                     p Feels Like
         div(class="weather_situation_info" id="weather_situation_info")
@@ -40,17 +40,17 @@ div(class="result_main_div")
                 li <iconify-icon icon="mdi:car-brake-low-pressure"></iconify-icon>
                 li HUMIDITY <span>(%)</span>
                 li 
-                li 23.5
+                li #{humidity || "23.5"}
             ul(class="weather_situation")
                 li <iconify-icon icon="carbon:humidity"></iconify-icon>
                 li AIR PRESSURE <span>(HPA)</span>
                 li 
-                li 1015
+                li #{pressure || "1015"}
             ul(class="weather_situation")
                 li <iconify-icon icon="bi:wind"></iconify-icon>
                 li WIND <span>(km/h)</span>
                 li 
-                li 8
+                li #{wind || "8"}
 
 
 
