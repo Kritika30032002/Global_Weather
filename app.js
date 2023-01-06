@@ -4,6 +4,7 @@ const bodyParser = require("body-parser");
 const favicon = require("serve-favicon");
 const path = require("path");
 require('dotenv').config()
+const timeObject = require('./public/scripts/time');
 
 
 /* ---------------------------- Basic Connections --------------------------- */
@@ -34,7 +35,7 @@ app.use(bodyParser.urlencoded({
 
 /* ---------------------------- Basic Routes --------------------------- */
 app.get("/", function (req, res,) {
-  res.render('index', { title: "Global_Weather | Home" });
+  res.render('index', { title: "Global_Weather | Home", time: timeObject.time, dayMethod: timeObject.dayMethod, day: timeObject.day, today: timeObject.today });
 });
 
 app.get("/about", function (req, res,) {
