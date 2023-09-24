@@ -1,11 +1,3 @@
-
-   
-<b> <a href="https://discord.gg/3NX2nThk" target="_blank">
-<font size="3200"> Be a part of our Community on Discord 🚀</font>
-</a>
-</b>
-
-
  
  # Global_Weather
 It is the project where we can find the weather of any place located globally. It is made using live API.
