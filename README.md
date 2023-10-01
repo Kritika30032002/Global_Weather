@@ -1,4 +1,7 @@
- 
+
+Join the [discord server](https://discord.gg/JdFsJPrayj) for more discussion: 
+
+
  # Global_Weather
 It is the project where we can find the weather of any place located globally. It is made using live API.
    
