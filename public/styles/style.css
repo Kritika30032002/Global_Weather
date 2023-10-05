@@ -319,17 +319,42 @@ body {
 }
 
 
-.current_time>p:nth-child(1) {
-  /* position: relative; */
+/* .current_time>p:nth-child(1) {
+  position: relative;
   font-size: 64px;
   width: auto;
 }
 
-.current_time>p:nth-child(1)>span {
+.current_time>p:nth-child(2)>span {
   font-size: 32px;
-  /* position: absolute;
+} */
+
+.current_time .time{
+  width: fit-content;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+}
+
+.current_time .time >p:first-of-type{
+  font-size: 64px;
+  width: auto;
+}
+
+.current_time .time >p:last-of-type{
+  font-size: 32px;
+  width: auto;
+  position: absolute;
+  right: -60px;
   bottom: -10px;
-  left: 4.2em; */
+}
+
+.current_time> p{
+  font-size: 22px;
+  width: auto;
+  /* padding-inline-start: 3rem; */
+  text-transform: uppercase;
 }
 
 .current_city {
