@@ -1,0 +1,25 @@
+p#date  #{today || "14 DECEMBER 2022"}
+script.
+    function updateTime() {
+        var now = new Date();
+        var hours = now.getHours();
+        var minutes = now.getMinutes();
+        var seconds = now.getSeconds();
+        var ampm = hours >= 12 ? 'PM' : 'AM';
+        hours = hours % 12;
+        hours = hours ? hours : 12; // Handle midnight (0 hours)
+
+        var timeString = hours + ':' + (minutes < 10 ? '0' : '') + minutes + ':' + (seconds < 10 ? '0' : '') + seconds;
+        var day = now.toLocaleDateString('en-US', { weekday: 'long' });
+        var date = now.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+
+        document.getElementById('time').textContent = timeString;
+        document.getElementById('dayMethod').textContent = ampm;
+        document.getElementById('date').textContent = day + ', ' + date;
+    }
+
+    // Initial call to display the current time
+    updateTime();
+
+    // Update time every second
+    setInterval(updateTime, 1000);
