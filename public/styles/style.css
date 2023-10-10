@@ -610,9 +610,7 @@ body {
 }
 
 @media (min-width: 1024px) {
-  body {
-    /* background-color: blue; */
-  }
+ 
 
   .result_main_div {
     height: 85vh;
@@ -809,4 +807,97 @@ h1 {
   }
 }
 
-*/
+/* Light mode styles */
+body {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+/* Dark mode styles */
+body.dark-mode {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+/* Add more styles for light and dark mode based on your existing styles */
+.darkToLight{
+  padding: 10px 20px;
+  border-radius: 50px;
+  outline: none;
+  border: none;
+  transition: all linear 0.3s;
+}
+
+.darkToLight:hover{
+  scale: 1.1;
+  background-color: crimson;
+  color: white;
+}
+
+.navbar.dark-mode{
+  background-color: #121212;
+  color: #ffffff !important;
+}
+
+.dark-mode .footer {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+.dark-mode .footer a {
+  color: #ffffff;
+}
+
+
+
+.about-page {
+  background-color: #ffffff;
+  color: #000000; /* Text color in light mode */
+}
+
+/* For dark mode */
+.dark-mode .about-page {
+  background-color: #000000;
+  color: #ffffff; /* Text color in dark mode */
+}
+
+.home-section {
+  color: #000000; /* Text color in light mode */
+}
+
+.about-section {
+  color: #000000; /* Text color in light mode */
+}
+
+/* For dark mode */
+.dark-mode .home-section {
+  color: #ffffff; /* Text color in dark mode */
+}
+
+.dark-mode .about-section {
+  color: #ffffff; /* Text color in dark mode */
+}
+
+.dark-mode .result_weather_info .current_weather_condition p {
+  color: black; /* Color of "CLOUDY" */
+}
+
+.dark-mode .result_weather_info .current_temperature div p {
+  color: black; /* Color of temperature like "17°C" and "5°C" */
+}
+
+.dark-mode .result_weather_info .temperature_feels_like p {
+  color: black; /* Color of "Feels Like" */
+
+}
+
+.dark-mode .result_weather_info .weather_situation_info ul li {
+  color: black; /* Color of HUMIDITY, AIR PRESSURE, WIND */
+}
+
+
+
+
+
+
+

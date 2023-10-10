@@ -1,27 +1,50 @@
-doctype html  
-html(lang='en')  
-    head
-        title #{title || Global_Weather}
-        meta(charset='utf-8')
-        meta(name="description" content="It is the right place where you can search for live weather of any place located globally.")
-        meta(name="viewport" content="width=device-width, initial-scale=1")
-        meta(name="keywords" content="weather, live-weather, weather-api ")
-        link(href="/styles/style.css", rel="stylesheet")
-        link(href="./css/bootstrap.min.css", rel="stylesheet")
-        link(href="/favicon.ico" rel="shortcut icon" type="image/x-icon" )
-    body
-        nav(class="navbar")
-            div(class="container")
-                div(class="navbar-header")
-                    button(class="navbar-toggler" data-toggle="open-navbar1" title="menu")
-                        span 
-                        span 
-                        span 
-                    a(href="/", title="home page")
-                        h4(class="m-0 weather_logo")    Global<span>Weather</span>
-                div(class="navbar-menu" id="open-navbar1")
-                    ul(class="navbar-nav")
-                        li(class="active")
-                            a(href="/", title="Home" class="active")    Home
-                        li 
-                            a(href="/about")    About
+doctype html
+html(lang='en')
+  head
+    title #{title || 'Global_Weather'}
+    meta(charset='utf-8')
+    meta(name="description" content="It is the right place where you can search for live weather of any place located globally.")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    meta(name="keywords" content="weather, live-weather, weather-api ")
+    link(href="/styles/style.css", rel="stylesheet")
+    link(href="./css/bootstrap.min.css", rel="stylesheet")
+    link(href="/favicon.ico", rel="shortcut icon", type="image/x-icon")
+  body
+    nav(class="navbar")
+      div(class="container")
+        div(class="navbar-header")
+          button(class="navbar-toggler", data-toggle="open-navbar1", title="menu")
+            span
+            span
+            span
+          a(href="/", title="home page")
+            h4(class="m-0 weather_logo theme") Global<span>Weather</span>
+        div(class="navbar-menu", id="open-navbar1")
+          ul(class="navbar-nav theme")
+            li(class="active")
+              a(href="/", title="Home", class="active theme") Home
+            li
+              a(href="/about", class="theme") About
+          button(id="toggle-mode-button" class="darkToLight theme") Theme Mode
+
+      script.
+        function toggleDarkMode() {
+          const body = document.body;
+          const navbar = document.querySelector('.navbar');
+          const themeElements = document.querySelectorAll('.theme');
+
+          body.classList.toggle('dark-mode');
+          navbar.classList.toggle('dark-mode');
+          themeElements.forEach(element => element.classList.toggle('dark-mode'));
+
+          const isDarkMode = body.classList.contains('dark-mode');
+          localStorage.setItem('darkMode', isDarkMode ? 'true' : 'false');
+        }
+
+        const savedDarkMode = localStorage.getItem('darkMode');
+        if (savedDarkMode === 'true') {
+          toggleDarkMode(); // Toggle dark mode if it was saved
+        }
+
+        const toggleButton = document.getElementById('toggle-mode-button');
+        toggleButton.addEventListener('click', toggleDarkMode);
